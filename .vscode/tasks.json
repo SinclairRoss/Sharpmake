@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Solution: Calamity",
+            "type": "shell",
+            "command": "C:/Users/S-Ros/Documents/Ragamuffin/Sharpmake/Sharpmake.Application/bin/Debug/net8.0/Sharpmake.Application.exe /sources('Soloution.Sharpmake.cs')",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "options": {
+              "cwd": "${workspaceFolder}/Sharpmake.Calamity"
+            }
+        }
+    ]
+}

@@ -53,7 +53,6 @@ _ReSharper*/
 *.orig
 .project
 Sharpmake.VC.db
-.vscode
 .idea
 
 # Smart commandline Visual Studio extension configuration file
