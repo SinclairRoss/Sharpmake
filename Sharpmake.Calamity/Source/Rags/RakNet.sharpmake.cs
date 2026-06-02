@@ -1,8 +1,10 @@
 using System.IO; 
 using Sharpmake; 
 
+[module: Sharpmake.Include("../MuffinProject.sharpmake.cs")]
+
 [Generate]
-public class Project_RakNet : Project
+public class Project_RakNet : MuffinProject
 {
     public Project_RakNet()
     {
@@ -13,22 +15,18 @@ public class Project_RakNet : Project
             Platform.win64,
             DevEnv.vs2022,
             Optimization.Debug | Optimization.Release, 
-            OutputType.Lib | OutputType.RunLocal));
+            OutputType.Lib));
     }
 
     [Configure]
-    public void ConfigureLib(Project.Configuration conf, Target target)
+    public override void ConfigureAll(Project.Configuration conf, Target target)
     {
-        conf.Name = "[target.Optimization]_[target.OutputType]";
-        conf.TargetPath = @"[project.SharpmakeCsPath]/../../Library/[target.Platform]/[conf.Name]";
+        base.ConfigureAll(conf, target);
 
-        conf.Output = Configuration.OutputType.Lib;
         conf.ProjectPath = "[project.SharpmakeCsPath]";
         conf.IncludePaths.Add("[project.SharpmakeCsPath]/Source");
         conf.IncludePaths.Add("[project.SharpmakeCsPath]/DependentExtensions/openssl-1.0.0d/include");
         conf.IncludePaths.Add("[project.SharpmakeCsPath]/DependentExtensions");
 
-        conf.Options.Add(Options.Vc.Librarian.TreatLibWarningAsErrors.Enable);
-        conf.Options.Add(Options.Vc.Compiler.CppLanguageStandard.CPP20);    
     }
 }

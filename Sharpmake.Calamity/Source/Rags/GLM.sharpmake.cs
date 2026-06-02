@@ -1,20 +1,21 @@
 using System.IO; 
 using Sharpmake; 
 
+[module: Sharpmake.Include("../MuffinProject.sharpmake.cs")]
+
 [Generate]
-public class Project_Calamity : MuffinProject
+public class Project_GLM : MuffinProject
 {
-    public Project_Calamity()
+    public Project_GLM()
     {
-        Name = "Calamity";
+        Name = "GLM";
         SourceRootPath = @"[project.SharpmakeCsPath]";
     }
 
     [Configure]
-    public void ConfigureLib(Project.Configuration conf, Target target)
+    public override void ConfigureAll(Project.Configuration conf, Target target)
     {
-        conf.Name = "[target.Optimization]_[target.OutputType]";
-        conf.TargetPath = @"[project.SharpmakeCsPath]/../../Library/[target.Platform]/[conf.Name]";
+        base.ConfigureAll(conf, target);
 
         conf.Output = Configuration.OutputType.Lib;
         conf.ProjectPath = "[project.SharpmakeCsPath]";
