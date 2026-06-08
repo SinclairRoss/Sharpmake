@@ -9,19 +9,18 @@ public class Project_Lua : MuffinProject
     public Project_Lua()
     {
         Name = "Lua";
-        SourceRootPath = @"[project.SharpmakeCsPath]";
+        SourceRootPath = @"[project.Path_Rags]/Lua/5.4.7/src";
     }
 
-    [Configure]
     public override void ConfigureAll(Project.Configuration conf, Target target)
     {
         base.ConfigureAll(conf, target);
 
-        conf.ProjectPath = "[project.SharpmakeCsPath]";
-        conf.IncludePaths.Add("[project.SharpmakeCsPath]/5.4.7/src");
+        //conf.IncludePaths.Add("[project.SharpmakeCsPath]/5.4.7/src");
 
-        conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine("5.4.4", @".*"));
-        conf.SourceFilesBuildExclude.Add("[project.SharpmakeCsPath]/5.4.7/src/luac.c");
+       // conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine("5.4.4", @".*"));
+        conf.IncludePaths.Add("[project.SourceRootPath]");
+        conf.SourceFilesBuildExclude.Add("[project.SourceRootPath]/luac.c");
  
     }
 }

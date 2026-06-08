@@ -9,22 +9,21 @@ public class Project_Imgui : MuffinProject
     public Project_Imgui()
     {
         Name = "Imgui";
-        SourceRootPath = @"[project.SharpmakeCsPath]";
+        SourceRootPath = "[project.Path_Rags]/Imgui";
     }
 
-    [Configure]
     public override void ConfigureAll(Project.Configuration conf, Target target)
     {
         base.ConfigureAll(conf, target);
 
-        conf.ProjectPath = "[project.SharpmakeCsPath]";
-        conf.IncludePaths.Add("[project.SharpmakeCsPath]");
-
-        conf.IncludePaths.Add("[project.SharpmakeCsPath]/../SDL/2.0.18/include");
-        conf.IncludePaths.Add("[project.SharpmakeCsPath]/../FreeType/2.12.1/include");
+        conf.IncludePaths.Add("[project.SourceRootPath]");
+        conf.IncludePaths.Add("[project.Path_Rags]/SDL/2.0.18/include");
+        conf.IncludePaths.Add("[project.Path_Rags]/FreeType/2.12.1/include");
 
         conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine("examples", @".*"));
         conf.SourceFilesBuildExclude.Add("backends/imgui_impl_sdl3.cpp");
         conf.SourceFilesBuildExclude.Add("backends/imgui_impl_sdlrenderer2.cpp");
+
+        conf.AddPublicDependency<Project_SDL>(target);
     }
 }
