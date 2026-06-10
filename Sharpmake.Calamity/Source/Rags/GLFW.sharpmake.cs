@@ -4,18 +4,18 @@ using Sharpmake;
 [module: Sharpmake.Include("../MuffinProject.sharpmake.cs")]
 
 [Generate]
-public class Project_GLEW : MuffinProject
+public class Project_GLFW : MuffinProject
 {
-    public Project_GLEW()
+    public Project_GLFW()
     {
-        Name = "GLEW";
-        SourceRootPath = @"[project.Path_Rags]/GLEW/src/";
+        Name = "GLFW";
+        SourceRootPath = @"[project.Path_Rags]/GLFW/src/";
     }
 
     public override void ConfigureAll(Project.Configuration conf, Target target)
     {
         base.ConfigureAll(conf, target);
 
-        conf.IncludePaths.Add("[project.SourceRootPath]/include");
+        conf.IncludePaths.Add("[project.Path_Rags]/GLFW/include/");
     }
 }
