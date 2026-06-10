@@ -9,7 +9,7 @@ public class Project_RapidXML : MuffinProject
     public Project_RapidXML()
     {
         Name = "RapidXML";
-        SourceRootPath = "[project.Path_Rags]/RapidXML/1.13";
+        SourceRootPath = "[project.Path_Rags]/RapidXML";
     }
 
     public override void ConfigureAll(Project.Configuration conf, Target target)

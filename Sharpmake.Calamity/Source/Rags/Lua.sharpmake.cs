@@ -9,7 +9,7 @@ public class Project_Lua : MuffinProject
     public Project_Lua()
     {
         Name = "Lua";
-        SourceRootPath = @"[project.Path_Rags]/Lua/5.4.7/src";
+        SourceRootPath = @"[project.Path_Rags]/Lua/";
     }
 
     public override void ConfigureAll(Project.Configuration conf, Target target)
