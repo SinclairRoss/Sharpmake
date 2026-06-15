@@ -20,7 +20,10 @@ public class Project_Lua : MuffinProject
 
        // conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine("5.4.4", @".*"));
         conf.IncludePaths.Add("[project.SourceRootPath]");
-        conf.SourceFilesBuildExclude.Add("[project.SourceRootPath]/luac.c");
+        conf.SourceFilesBuildExclude.Add("[project.SourceRootPath]/onelua.c");
+        conf.SourceFilesBuildExcludeRegex.Add("./testes/*");
+
+        conf.Defines.Add("MAKE_LIB");
  
     }
 }

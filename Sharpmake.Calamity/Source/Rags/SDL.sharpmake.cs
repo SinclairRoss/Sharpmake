@@ -59,7 +59,7 @@ public class Project_SDL : MuffinProject
         conf.SourceFilesBuildExcludeRegex.Add("./x11/*");
         conf.SourceFilesBuildExcludeRegex.Add("./direct3d11/*");
         conf.SourceFilesBuildExcludeRegex.Add("./pthread/*");
-        conf.SourceFilesBuildExcludeRegex.Add("./generic/*");    
+        conf.SourceFilesBuildExcludeRegex.Add("./generic/*");
 
         conf.SourceFilesBuildExcludeRegex.Add("./stdcpp/*"); 
        // conf.SourceFilesBuildExcludeRegex.Add("./thread/windows/*");    
@@ -68,6 +68,6 @@ public class Project_SDL : MuffinProject
 
         conf.SourceFilesBuildExcludeRegex.Add("./test/*");
         
-        conf.Options.add(Options.Vc.General.WarningLevel.Level0);
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
     }
 }
