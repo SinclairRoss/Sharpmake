@@ -17,5 +17,11 @@ public class Project_SDLMixer : MuffinProject
         base.ConfigureAll(conf, target);
 
         conf.IncludePaths.Add("[project.Path_Rags]/SDL_mixer/include");
+        conf.IncludePrivatePaths.Add("[project.Path_Rags]/SDL_mixer/src/codecs");
+        conf.IncludePrivatePaths.Add("[project.Path_Rags]/SDL_mixer/src");
+
+        conf.Defines.Add("MUSIC_WAV");
+
+        conf.AddPublicDependency<Project_SDL>(target);
     }
 }

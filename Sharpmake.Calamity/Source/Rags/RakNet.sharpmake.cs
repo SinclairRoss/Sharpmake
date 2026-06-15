@@ -16,9 +16,14 @@ public class Project_RakNet : MuffinProject
     {
         base.ConfigureAll(conf, target);
 
-        conf.IncludePaths.Add("[project.Path_Rags]/RakNet//Source");
-        conf.IncludePaths.Add("[project.Path_Rags]/RakNet//DependentExtensions/openssl-1.0.0d/include");
-        conf.IncludePaths.Add("[project.Path_Rags]/RakNet//DependentExtensions");
+        conf.IncludePaths.Add("[project.Path_Rags]/RakNet/Source");
+        conf.IncludePaths.Add("[project.Path_Rags]/RakNet/DependentExtensions/openssl-1.0.0d/include");
+        conf.IncludePaths.Add("[project.Path_Rags]/RakNet/DependentExtensions");
 
+        conf.Defines.Add("_RAKNET_LIB");
+
+        conf.SourceFilesBuildExcludeRegex.Add("./DependentExtensions/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./Samples/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./cat/*");
     }
 }

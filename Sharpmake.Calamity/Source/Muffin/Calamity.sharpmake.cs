@@ -19,5 +19,7 @@ public class Project_Calamity : MuffinProject
 
         conf.AddPublicDependency<Project_Muffin>(target);
         conf.IncludePaths.Add("[project.SourceRootPath]");
+
+        conf.Defines.Add("NOGDI");
     }
 }

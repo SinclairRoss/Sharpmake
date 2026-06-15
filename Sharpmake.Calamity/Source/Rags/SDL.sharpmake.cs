@@ -19,19 +19,55 @@ public class Project_SDL : MuffinProject
 
         conf.IncludePaths.Add("[project.Path_Rags]/SDL/include");
 
-        conf.AddPublicDependency<Project_SDLMixer>(target);
-
-
         conf.SourceFilesBuildExclude.Add("[project.SourceRootPath]/audio/ps2/SDL_ps2audio.c");
 
-        conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"core\\android", @".*"));
-        conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"core\\freebsd", @".*"));
-        conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"core\\gdk", @".*"));
-        conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"core\\linux", @".*"));
-        conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"core\\openbsd", @".*"));
-        conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"core\\os2", @".*"));
-        conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"core\\unix", @".*"));
-        conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"core\\winrt", @".*"));
+        conf.SourceFilesBuildExcludeRegex.Add("./android/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./freebsd/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./gdk/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./linux/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./openbsd/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./os2/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./ps2/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./unix/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./winrt/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./vita/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./psp/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./n3ds/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./macosx/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./emscripten/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./haiku/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./dummy/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./qnx/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./mac/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./ngage/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./darwin/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./vivante/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./wayland/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./yuv2rgb/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./offscreen/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./nacl/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./arm/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./cocoa/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./directfb/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./khronos/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./kmsdrm/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./pandora/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./raspberry/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./riscos/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./uikit/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./nacl/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./x11/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./direct3d11/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./pthread/*");
+        conf.SourceFilesBuildExcludeRegex.Add("./generic/*");    
 
+        conf.SourceFilesBuildExcludeRegex.Add("./stdcpp/*"); 
+       // conf.SourceFilesBuildExcludeRegex.Add("./thread/windows/*");    
+
+        conf.SourceFilesBuildExcludeRegex.Add("hidapi/*");
+
+        conf.SourceFilesBuildExcludeRegex.Add("./test/*");
+        
+        conf.Options.add(Options.Vc.General.WarningLevel.Level0);
     }
 }

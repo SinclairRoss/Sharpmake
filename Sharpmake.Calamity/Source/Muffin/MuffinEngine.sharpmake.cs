@@ -35,5 +35,8 @@ public class Project_Muffin : MuffinProject
         conf.AddPublicDependency<Project_RapidJSON>(target);
         conf.AddPublicDependency<Project_RapidXML>(target);
         conf.AddPublicDependency<Project_SDL>(target);
+        conf.AddPublicDependency<Project_SDLMixer>(target);
+        
+        conf.Defines.Add("NOGDI");
     }
 }

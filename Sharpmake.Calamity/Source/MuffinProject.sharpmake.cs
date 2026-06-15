@@ -30,8 +30,11 @@ public class MuffinProject : Project
 
         conf.Options.Add(Options.Vc.Librarian.TreatLibWarningAsErrors.Enable);
         conf.Options.Add(Options.Vc.Compiler.CppLanguageStandard.CPP20);
+        conf.Options.Add(Options.Vc.Compiler.CLanguageStandard.C17);
+        conf.Options.Add(Options.Vc.Compiler.RTTI.Enable);
 
-        conf.Defines.Add("NOGDI");
+        conf.Defines.Add("_CRT_SECURE_NO_WARNINGS");
+        conf.Defines.Add("NOMINMAX");
     }
 
     private const string _Path_Rags = "[project.Path_Workspace]/Calamity/Rags";                                         
