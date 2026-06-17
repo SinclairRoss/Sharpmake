@@ -24,6 +24,8 @@ public class Project_Lua : MuffinProject
         conf.SourceFilesBuildExcludeRegex.Add("./testes/*");
 
         conf.Defines.Add("MAKE_LIB");
+
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
  
     }
 }

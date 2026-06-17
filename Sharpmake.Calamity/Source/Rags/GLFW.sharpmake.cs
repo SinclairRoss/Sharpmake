@@ -2,6 +2,7 @@ using System.IO;
 using Sharpmake; 
 
 [module: Sharpmake.Include("../MuffinProject.sharpmake.cs")]
+[module: Sharpmake.Include("GLAD.sharpmake.cs")]
 
 [Generate]
 public class Project_GLFW : MuffinProject
@@ -17,7 +18,6 @@ public class Project_GLFW : MuffinProject
         base.ConfigureAll(conf, target);
 
         conf.IncludePaths.Add("[project.Path_Rags]/GLFW/include/");
-        conf.IncludePaths.Add("[project.Path_Rags]/GLFW/deps");
 
         if(target.Platform != Platform.linux)
         {
@@ -43,9 +43,13 @@ public class Project_GLFW : MuffinProject
         conf.SourceFilesBuildExcludeRegex.Add("./examples/*");
         conf.SourceFilesBuildExcludeRegex.Add("./tests/*");
         
+        conf.ExportDefines.Add("GLFW_EXPOSE_NATIVE_WIN32");
         conf.Defines.Add("_GLFW_WIN32");
+        //conf.ExportDefines.Add("GLFW_INCLUDE_GLCOREARB");
 
         conf.Options.Add(Options.Vc.Compiler.CppLanguageStandard.CPP98);
         conf.Options.Add(Options.Vc.Compiler.CLanguageStandard.Legacy);
+
+        conf.AddPublicDependency<Project_Glad>(target);
     }
 }

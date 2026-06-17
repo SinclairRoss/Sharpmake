@@ -21,9 +21,12 @@ public class Project_RakNet : MuffinProject
         conf.IncludePaths.Add("[project.Path_Rags]/RakNet/DependentExtensions");
 
         conf.Defines.Add("_RAKNET_LIB");
+        conf.ExportDefines.Add("_RAKNET_LIB");
 
         conf.SourceFilesBuildExcludeRegex.Add("./DependentExtensions/*");
         conf.SourceFilesBuildExcludeRegex.Add("./Samples/*");
         conf.SourceFilesBuildExcludeRegex.Add("./cat/*");
+
+        conf.LibraryFiles.Add("Ws2_32.lib");
     }
 }
