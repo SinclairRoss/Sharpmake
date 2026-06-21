@@ -28,5 +28,7 @@ public class Project_RakNet : MuffinProject
         conf.SourceFilesBuildExcludeRegex.Add("./cat/*");
 
         conf.LibraryFiles.Add("Ws2_32.lib");
+
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
     }
 }

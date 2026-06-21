@@ -18,5 +18,7 @@ public class Project_RapidXML : MuffinProject
 
         conf.Output = Configuration.OutputType.Utility;
         conf.IncludePaths.Add("[project.SourceRootPath]/Rapidxml");
+
+        conf.SourceFilesBuildExcludeRegex.Add("RapidXML.Tests/*");
     }
 }
