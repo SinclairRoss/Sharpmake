@@ -23,5 +23,8 @@ public class Project_SDLMixer : MuffinProject
         conf.Defines.Add("MUSIC_WAV");
 
         conf.AddPublicDependency<Project_SDL>(target);
+
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
     }
 }

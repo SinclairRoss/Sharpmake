@@ -2,7 +2,6 @@ using System.IO;
 using Sharpmake; 
 
 [module: Sharpmake.Include("../MuffinProject.sharpmake.cs")]
-[module: Sharpmake.Include("../Rags/Freetype.sharpmake.cs")]
 
 [Generate]
 public class Project_Imgui : MuffinProject
@@ -26,6 +25,8 @@ public class Project_Imgui : MuffinProject
         conf.SourceFilesBuildExclude.Add("backends/imgui_impl_sdlrenderer2.cpp");
 
         conf.AddPublicDependency<Project_SDL>(target);
-        //conf.AddPublicDependency<Project_Freetype>(target);
+        
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
     }
 }

@@ -26,6 +26,6 @@ public class Project_Lua : MuffinProject
         conf.Defines.Add("MAKE_LIB");
 
         conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
- 
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
     }
 }

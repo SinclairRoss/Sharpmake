@@ -30,5 +30,6 @@ public class Project_RakNet : MuffinProject
         conf.LibraryFiles.Add("Ws2_32.lib");
 
         conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
     }
 }

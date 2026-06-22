@@ -17,5 +17,8 @@ public class Project_Glad : MuffinProject
         base.ConfigureAll(conf, target);
 
         conf.IncludePaths.Add("[project.Path_Rags]/glad/include");
+        
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
     }
 }

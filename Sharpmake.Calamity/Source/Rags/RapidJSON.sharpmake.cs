@@ -18,6 +18,8 @@ public class Project_RapidJSON : MuffinProject
 
         conf.Output = Configuration.OutputType.Utility;
         conf.IncludePaths.Add("[project.Path_Rags]/RapidJSON/include");
-    
+
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
     }
 }

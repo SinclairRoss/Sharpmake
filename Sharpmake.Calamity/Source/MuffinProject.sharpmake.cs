@@ -33,6 +33,9 @@ public class MuffinProject : Project
         conf.Options.Add(Options.Vc.Compiler.CLanguageStandard.C17);
         conf.Options.Add(Options.Vc.Compiler.RTTI.Enable);
 
+        conf.Options.Add(new Options.Vc.Compiler.DisableSpecificWarnings("4100", "4267"));
+        conf.Options.Add(Options.Vc.Compiler.Exceptions.Enable);
+        
         conf.Defines.Add("_CRT_SECURE_NO_WARNINGS");
         conf.Defines.Add("NOMINMAX");
     }

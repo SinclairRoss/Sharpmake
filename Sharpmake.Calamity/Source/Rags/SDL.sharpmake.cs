@@ -97,6 +97,7 @@ public class Project_SDL : MuffinProject
 
         conf.SourceFilesBuildExcludeRegex.Add("main/*");
 
+
         const bool dummy = false;
         if(!dummy)
         {   
@@ -167,7 +168,8 @@ public class Project_SDL : MuffinProject
         }
         
         conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
-
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
+        
         conf.LibraryFiles.Add("Cfgmgr32.lib");
         conf.LibraryFiles.Add("Version.lib");
         conf.LibraryFiles.Add("SetupAPI.lib");        

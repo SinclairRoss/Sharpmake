@@ -5,11 +5,11 @@ using Sharpmake;
 [module: Sharpmake.Include("../Rags/Lua.sharpmake.cs")]
 [module: Sharpmake.Include("../Rags/RakNet.sharpmake.cs")]
 [module: Sharpmake.Include("../Rags/GLM.sharpmake.cs")]
-[module: Sharpmake.Include("../Rags/GLFW.sharpmake.cs")]
 [module: Sharpmake.Include("../Rags/Box2D.sharpmake.cs")]
 [module: Sharpmake.Include("../Rags/RapidJSON.sharpmake.cs")]
 [module: Sharpmake.Include("../Rags/RapidXML.sharpmake.cs")]
 [module: Sharpmake.Include("../Rags/SDL.sharpmake.cs")]
+[module: Sharpmake.Include("../Rags/GLAD.sharpmake.cs")]
 
 [Generate]
 public class Project_Muffin : MuffinProject
@@ -30,7 +30,7 @@ public class Project_Muffin : MuffinProject
         conf.AddPublicDependency<Project_Lua>(target);
         conf.AddPublicDependency<Project_RakNet>(target);
         conf.AddPublicDependency<Project_GLM>(target);
-        conf.AddPublicDependency<Project_GLFW>(target);
+        conf.AddPublicDependency<Project_Glad>(target);
         conf.AddPublicDependency<Project_Box2D>(target);
         conf.AddPublicDependency<Project_RapidJSON>(target);
         conf.AddPublicDependency<Project_RapidXML>(target);

@@ -17,5 +17,8 @@ public class Project_Box2D : MuffinProject
         base.ConfigureAll(conf, target);
 
         conf.IncludePaths.Add("[project.Path_Rags]/box2d/include");
+        
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
     }
 }

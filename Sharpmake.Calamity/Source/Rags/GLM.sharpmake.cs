@@ -20,5 +20,8 @@ public class Project_GLM : MuffinProject
 
         conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"glm\\test", @".*"));
         conf.SourceFilesBuildExcludeRegex.Add(Util.RegexPathCombine(@"glm\\util", @".*"));
+        
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
     }
 }

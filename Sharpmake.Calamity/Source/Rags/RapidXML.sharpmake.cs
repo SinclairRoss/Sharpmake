@@ -20,5 +20,8 @@ public class Project_RapidXML : MuffinProject
         conf.IncludePaths.Add("[project.SourceRootPath]/Rapidxml");
 
         conf.SourceFilesBuildExcludeRegex.Add("RapidXML.Tests/*");
+
+        conf.Options.Add(Options.Vc.General.WarningLevel.Level0);
+        conf.Options.Add(Options.Vc.Compiler.Optimization.FullOptimization);
     }
 }
